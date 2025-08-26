@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hadiah kecil buat kamu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5em;
+      color: #fff;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .heart {
+      font-size: 3em;
+      animation: pulse 1.5s infinite;
+      color: red;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    .card {
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1em;
+      background: #ff5f6d;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff2e63;
+      transform: scale(1.1);
+    }
+
+    .emoji-rain {
+      position: fixed;
+      top: -50px;
+      font-size: 2em;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px); }
+      100% { transform: translateY(110vh); }
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hai ZAHHH  </h1>
+  <div class="heart">❤️</div>
+  
+  <div class="card">
+    <h2>Aku Bikin Ini Buat Kamu 😆</h2>
+    <p>
+      Web ini bukan buat balikan kok 🤭  
+      Cuma biar kamu senyum aja liatnya ✨
+    </p>
+
+    <!-- FOTO KALIAN -->
+    <img src="jpg,foto1" alt="Foto Kita">
+    <img src="jpg,foto2" alt="Foto Kita">
+    <img src="jpg,foto3" alt="Foto Kita">
+
+    <!-- LAGU -->
+    <audio controls autoplay loop>
+      <source src="lagu.mp3" type="audio/mpeg">
+      Browser kamu gak support audio 😅
+    </audio>
+
+    <button class="btn" onclick="showMessage()">Klik aku dong 😏</button>
+    <p id="secret" style="display:none; margin-top:15px; font-weight:bold; color:#ff2e63;">
+      Ups... ternyata kamu masih kepo ya 🤭
+    </p>
+  </div>
+
+  <script>
+    // pesan rahasia
+    function showMessage() {
+      document.getElementById(I LOVE YOU").style.display = "block";
+    }
+
+    // hujan emoji
+    function createEmoji() {
+      const emojiList = ["😂","😜","🤪","🥰","🙈","✨","💖"];
+      const emoji = document.createElement("div");
+      emoji.classList.add("emoji-rain");
+      emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => { emoji.remove(); }, 5000);
+    }
+    setInterval(createEmoji, 500);
+  </script>
+</body>
+</html>
